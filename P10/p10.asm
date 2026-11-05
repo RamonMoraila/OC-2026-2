@@ -5,28 +5,21 @@ global pBin8b
 pBin8b:
         push ebp
         mov ebp,esp
-        mov eax, [ebp+8]
+        mov edx, [ebp+8]
         mov ecx,8
 
-        .ciclo: shl al,1
+.ciclo: shl dl,1
         jc .esuno
-        jnc .escero
-        .continuar: inc dl
-        loop .ciclo
+        mov al,'0'
+        jmp .imprimir
+.esuno: mov al,'1'
+.imprimir: call my_putchar
 
-        mov esp,ebp
+        loop .ciclo
 
         pop ebp
 
         ret
-
-        .esuno: mov al,'1'
-        call my_putchar
-        jmp .continuar
-
-        .escero: mov al,'0'
-        call my_putchar
-        jmp .continuar
 
 
 
