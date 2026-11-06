@@ -3,6 +3,7 @@ section .text
 global pBin8b
 global pBin16b
 global pBin32b
+global pBin64b
 
 pBin8b:
         push ebp
@@ -61,6 +62,39 @@ pBin32b:
 
         ret
 
+
+pBin64b:
+        push ebp
+        push ebx
+        mov ebp,esp
+        mov edx, [ebp+12]
+        mov ebx, [ebp+16]
+        mov ecx,32
+
+.ciclo: shl ebx,1
+        jc .esuno
+        mov al,'0'
+        jmp .imprimir
+.esuno: mov al,'1'
+.imprimir: call my_putchar
+
+        loop .ciclo
+
+        mov ecx,32
+
+.ciclo2: shl edx,1
+        jc .esuno1
+        mov al,'0'
+        jmp .imprimire
+.esuno1: mov al,'1'
+.imprimire: call my_putchar
+
+        loop .ciclo2
+
+        pop ebx
+        pop ebp
+
+        ret
 
 
 

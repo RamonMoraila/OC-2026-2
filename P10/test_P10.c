@@ -4,6 +4,7 @@
 extern void pBin8b(uint8_t numero);
 extern void pBin16b(uint16_t numero2);
 extern void pBin32b(uint32_t numero3);
+extern void pBin64b(uint64_t numero4);
 
 int main()
 {
@@ -22,6 +23,12 @@ int main()
     pBin32b(0xBAD6);
 
     printf(" :Valor BAD6h en binario");
+
+    printf("\n");
+
+    pBin64b(0xE4793F4F9540CBF3);
+
+    printf(" :Valor E4793F4F9540CBF3h en binario");
 
     printf("\n");
     
