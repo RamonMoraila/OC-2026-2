@@ -4,14 +4,11 @@ extern int str_len(char *str);
 
 int main(){
 
-    char str;
+    char oracion[]="Tortillas el pibe";
 
-    printf("Ingrese una cadena:")
-    scanf("%c",*str)
+    int total = str_len(oracion);
 
-    int total = str_len(&str)
-
-    printf("Total de caracteres: %d",total);
+    printf("Total de caracteres: %d\n",total);
     
     return 0;
 

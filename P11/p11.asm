@@ -9,12 +9,13 @@ str_len:
         mov edx, [ebp+8]
         mov ecx,0
 
-   .ciclo: cmp [edx+ecx],0
-        je fin_cadena
+   .ciclo: mov al,[edx+ecx]
+        cmp al,0
+        je .fin_cadena
         inc ecx
         jmp .ciclo
 
-       fin_cadena:
+       .fin_cadena:
        mov eax,ecx
        pop ebp
        ret
