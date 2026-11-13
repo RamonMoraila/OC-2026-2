@@ -11,8 +11,8 @@ int main(){
 
     printf("Total de caracteres: %d\n",total);
 
-    int value = 15;
-    int nbit = 8;
+    int value = 7;
+    int nbit = 4;
 
     int res= clrBit(value,nbit);
 
